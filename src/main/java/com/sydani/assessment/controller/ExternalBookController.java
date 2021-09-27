@@ -33,7 +33,7 @@ public class ExternalBookController{
         BookDto[] bookDtos = gson.fromJson(json, BookDto[].class);
 
 
-        return new ResponseEntity<>(new ApiResponse(201, "success", bookDtos[0]), HttpStatus.CREATED);
+        return new ResponseEntity<>(new ApiResponse(200, "success", bookDtos), HttpStatus.OK);
     }
 
 }

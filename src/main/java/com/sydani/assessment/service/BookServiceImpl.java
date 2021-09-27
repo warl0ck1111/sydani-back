@@ -32,8 +32,10 @@ public class BookServiceImpl implements BookService<Book, BookDto> {
     @Transactional
     @Override
     public Book update(BookDto dto, Long id) {
+        System.out.println("dto"+ dto);
         book = findById(id);
         BeanUtils.copyProperties(dto, book);
+        System.out.println("BOOK"+book);
         return bookRepository.save(book);
     }
 

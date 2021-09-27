@@ -106,7 +106,7 @@ if (name != null){
         return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was deleted successfully", deletedBook.getName()),new ArrayList<>()), HttpStatus.OK);
     }
 
- @PostMapping(path = "/{id}/delete")
+ @DeleteMapping(path = "/{id}/delete")
     public ResponseEntity<?> deleteBooks2(@PathVariable(name = "id") Long id) {
      Book deletedBook = bookService.delete(id);
 

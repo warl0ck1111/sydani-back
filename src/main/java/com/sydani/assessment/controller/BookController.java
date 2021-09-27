@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("api/v1/books")
 public class BookController {

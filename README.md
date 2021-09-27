@@ -1,6 +1,6 @@
 # sydani-back
 
-###
+##
 GET http://localhost:8080/api/external-books?name= a game of thrones
 
 {
@@ -23,7 +23,7 @@ GET http://localhost:8080/api/external-books?name= a game of thrones
 
 
 
-###
+##
 POST http://localhost:8080/api/v1/books?name= a game of thrones
 
 {
@@ -41,7 +41,7 @@ POST http://localhost:8080/api/v1/books?name= a game of thrones
 }
 
 
-###
+##
 GET http://localhost:8080/api/v1/books
 
 {
@@ -61,7 +61,7 @@ GET http://localhost:8080/api/v1/books
 }
 
 
-###
+##
 PATCH http://localhost:8080/api/v1/books/1?name=a pain in arse
 
 {
@@ -78,3 +78,15 @@ PATCH http://localhost:8080/api/v1/books/1?name=a pain in arse
     "released": null
   }
 }         
+
+
+##
+DELETE http://localhost:8080/api/v1/books/3
+
+{
+  "status_code": 200,
+  "status": "success",
+  "message": "The book A Game of Thrones was updated successfully",
+  "data": []
+}
+

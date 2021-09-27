@@ -83,7 +83,7 @@ if (name != null){
         }
         Book updatedBook = bookService.update(bookDto, id);
 
-        return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was updated successfully", name),updatedBook ), HttpStatus.OK);
+        return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was updated successfully", name),updatedBook.getName() ), HttpStatus.OK);
     }
 
  @PostMapping(path = "/{id}/update")
@@ -94,7 +94,7 @@ if (name != null){
 
      Book updatedBook = bookService.update(bookDto, id);
 
-     return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was updated successfully", name),updatedBook ), HttpStatus.OK);
+     return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was updated successfully", name),updatedBook.getName() ), HttpStatus.OK);
  }
 
 
@@ -102,14 +102,14 @@ if (name != null){
     public ResponseEntity<?> deleteBooks(@PathVariable(name = "id") Long id) {
         Book deletedBook = bookService.delete(id);
 
-        return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was updated successfully", deletedBook),new ArrayList<>()), HttpStatus.OK);
+        return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was deleted successfully", deletedBook.getName()),new ArrayList<>()), HttpStatus.OK);
     }
 
  @PostMapping(path = "/{id}/delete")
     public ResponseEntity<?> deleteBooks2(@PathVariable(name = "id") Long id) {
      Book deletedBook = bookService.delete(id);
 
-     return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was updated successfully", deletedBook),new ArrayList<>() ), HttpStatus.OK);
+     return new ResponseEntity<>(new ApiUpdateResponse(200, "success", String.format("The book %s was deleted successfully", deletedBook.getName()),new ArrayList<>() ), HttpStatus.OK);
     }
 
 
